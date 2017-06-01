@@ -1,0 +1,9 @@
+
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(use-package flycheck)
+
+(use-package _python
+	     :ensure f)
+
+(provide 'development)

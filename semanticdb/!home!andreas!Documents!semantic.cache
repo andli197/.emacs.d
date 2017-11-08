@@ -1,0 +1,23 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("csv" include nil nil [1 11])
+            ("argparse" include nil nil [12 27])
+            ("main" function (:arguments 
+              ( ("notificationdefinitionfile" variable nil (reparse-symbol function_parameters) [39 65])
+                ("sqlitedatabase" variable nil (reparse-symbol function_parameters) [67 81])
+                ("overwrite" variable nil (reparse-symbol function_parameters) [83 92]))              ) nil [30 278])
+            ("if" code nil nil [303 449]))          
+      :file "definition_parser.py"
+      :pointmax 449
+      :fsize 448
+      :lastmodtime '(23014 30372 799201 90000)
+      :unmatched-syntax nil))
+  :file "!home!andreas!Documents!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

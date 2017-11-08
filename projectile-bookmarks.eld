@@ -1,0 +1,1 @@
+("~/.emacs.d/" "~/work/Stationary/Galaxen/Scheduler/trunk/" "~/work/Galaxen.org/" "~/Documents/")

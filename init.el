@@ -1,45 +1,53 @@
+(require 'package)
+(add-to-list 'package-archives
+         '("melpa" . "http://melpa.org/packages/") t)
+
 (package-initialize)
 
-(set-language-environment "Latin-1")
+(when (not package-archive-contents)
+    (package-refresh-contents))
 
-(setq auto-compile-on-load-mode 1)
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
-(let ((default-directory "~/.emacs.d/"))
-  (normal-top-level-add-subdirs-to-load-path))
+(require 'use-package)
+(setq use-package-always-ensure t)
 
-(setq inhibit-startup-message t)
-(setq linum-format "%4d \u2502 ")
-(setq column-number-mode 1)
-(desktop-save-mode 1)
-(global-linum-mode t)
+(add-to-list 'load-path "~/.emacs.d/custom")
 
-(fset 'yes-or-no-p 'y-or-n-p)
+(require 'setup-general)
+(if (version< emacs-version "24.4")
+    (require 'setup-ivy-counsel)
+  (require 'setup-helm)
+  (require 'setup-helm-gtags))
+;; (require 'setup-ggtags)
+(require 'setup-cedet)
+(require 'setup-editing)
+(require 'setup-languages)
 
-(require 'pkg-bootstrap)
-
-(use-package better-defaults)
-
-(use-package cyberpunk-theme
-             :config
-             (load-theme 'cyberpunk t))
-
-(use-package yasnippet
-             :config
-             (yas-global-mode 1))
-
-(use-package development
-  :ensure f
-  :load-path "development/")
-
-(use-package buffer
-  :ensure f
-  :load-path "custom/")
-
-(use-package bindings
-  :ensure f
-  :load-path "custom/")
-
-(use-package inf-php)
-
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+;; function-args
+;; (require 'function-args)
+;; (fa-config-default)
+;; (define-key c-mode-map  [(tab)] 'company-complete)
+;; (define-key c++-mode-map  [(tab)] 'company-complete)(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (company-jedi web-mode zygospore helm-gtags helm yasnippet ws-butler volatile-highlights use-package undo-tree iedit dtrt-indent counsel-projectile company clean-aindent-mode anzu)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (elpy yaml-mode auto-complete-config zygospore yasnippet-snippets ws-butler web-mode volatile-highlights use-package undo-tree twig-mode smartparens php-auto-yasnippets jedi-direx iedit helm-swoop helm-projectile helm-gtags flymake-php expand-region dtrt-indent cyberpunk-theme company-jedi clean-aindent-mode better-defaults auto-complete-auctex anzu ac-php))))

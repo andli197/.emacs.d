@@ -1,0 +1,52 @@
+import sqlite3
+
+
+class sqliteheader:
+    def __init__(self, name, datatype, options=''):
+        self.name = name
+        self.datatype = datatype
+        self.options = options
+
+
+class sqlitevalue:
+    def __init__(self, value, header):
+        self.value = value
+        self.header = header
+
+class sqliterow:
+    def __init__(self, headers):
+        self.headers = headers
+        self.values = []
+
+    def add_header(self, header):
+        if len([h fot h in self.headers if h.name.lower() == header.name.lower()]) == 0:
+            self.headers.append(header)
+
+class sqlitetable:
+    def __init__(self, name):
+        self.name = name
+        self.headers = []
+        self.rows = []
+
+    def add_column(self, column):
+        self.
+
+class sqlitedatabase:
+    def __init__(self, name):
+        self.name = name
+        self.tables = []
+
+    def add_table(self, table):
+        if len([t for t in self.tables if t.])
+        self.tables.add(table)
+
+    def persist(self, connection):
+        pass
+
+
+class sqlitedatabase:
+    def __init__(self, name):
+
+
+def main():
+    pass

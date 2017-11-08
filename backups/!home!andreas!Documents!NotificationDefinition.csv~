@@ -1,5 +1,0 @@
-code;machine;machine group;layout;text;image;next;custom
-1;WD-18CW;;specification;notification.1.name;Operator-alarm;front;error
-1;WD-18CW;;front;notification.1.description;M:Operator-alarm;swipe;button.continue
-1;WD-18CW;;swipe;notification.1.guide1;;;0
-1;WD-18CW;;swipe;notification.1.guide2;;;1

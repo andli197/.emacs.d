@@ -21,9 +21,11 @@
 (require 'init-better-defaults)
 (require 'init-smex)
 (require 'init-general)
-;;(require 'init-benchmarking)
+(require 'init-benchmarking)
 (require 'init-projectile)
+(require 'init-lsp-mode)
+(require 'init-yassnippet)
 ;; org-mode and projectile
-
+(require 'init-ggtags)
 (require 'init-language-cpp)
 ;; lsp-mode!!!!
